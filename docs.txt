@@ -3,3 +3,6 @@ how to connect cli to git: https://help.github.com/en/articles/adding-an-existin
 
 Quickly deploy Angular CLI project to GitHub Pages
 https://medium.com/@swarnakishore/deploying-angular-cli-project-to-github-pages-db49246598a1
+
+ng build --env=prod --base-href “https://username.github.io/repository_name/”
+ng build --env=prod --base-href “https://jaws615.github.io/bubbie/”
