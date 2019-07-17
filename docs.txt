@@ -6,3 +6,12 @@ https://medium.com/@swarnakishore/deploying-angular-cli-project-to-github-pages-
 
 ng build --env=prod --base-href “https://username.github.io/repository_name/”
 ng build --env=prod --base-href “https://jaws615.github.io/bubbie/”
+
+npx angular-cli-ghpages --dir=dist/angular-tour-of-heroes
+
+
+//adds the in memory web api
+npm install angular-in-memory-web-api --save
+
+//geenerae ain memory service 
+ng generate service InMemoryData
