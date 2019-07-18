@@ -11,6 +11,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class HeroService {
     private heroesUrl = 'api/heroes';  // URL to web api
+    
+    
   /*getHeroes(): Hero[] {
     return HEROES;
   }
@@ -26,7 +28,16 @@ export class HeroService {
     }
   
   */
-  
+  /** PUT: update the hero on the server */
+    updateHero (hero: Hero): Observable<any> {
+        const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+      return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
+        tap(_ => this.log(`updated hero id=${hero.id}`)),
+        catchError(this.handleError<any>('updateHero'))
+      );
+    }
     
     
   /** GET hero by id. Will 404 if id not found */
